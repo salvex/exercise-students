@@ -14,7 +14,9 @@ int main( void ) {
   scanf( "%d", &x );
 
   int y[ x ][ x ];
+  puts("Enter matrix's variables: ");
   readMatrix( x, y );
+  puts("your matrix is: ");
   printMatrix( x, y );
   sumDiagonal( x, y );
 
@@ -24,19 +26,29 @@ int main( void ) {
 void readMatrix( int a, int c[][ a ] ) {
   for ( size_t i = 0; i < a; i++ ) {
     for ( size_t j = 0; j < a; j++ ) {
-      scanf( "%d\n", &c[ i ][ j ] );
+      scanf( "%d", &c[ i ][ j ] );
     }
   }
 }
 
+void printMatrix( int a, int c[][ a ] ) {
+  for ( size_t i = 0; i < a; i++ ) {
+    for ( size_t j = 0; j < a; j++ ) {
+      printf( "%d\t", c[ i ][ j ] );
+    }
+    printf( "\n" );
+  }
+  printf( "\n" );
+}
+
 void sumDiagonal( int a, int c[][ a ] ) {
-  for (size_t i = 0; i < a; i++) {
-    for (size_t j = 0; j < a; j++) {
-      if (/* condition */) {
-        /* code */
-      } else {
-        /* code */
+  int sum = 0;
+  for ( size_t i = 0; i < a; i++ ) {
+    for ( size_t j = 0; j < a; j++ ) {
+      if ( i == j ) {
+        sum += c[ i ][ j ];
       }
     }
   }
+  printf( "The sum of the digonal's elements is %d", sum );
 }
