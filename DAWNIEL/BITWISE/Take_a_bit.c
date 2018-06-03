@@ -8,7 +8,7 @@ void takeBit( long int a, long int b );
 
 int main( void ) {
   long int n = 1;
-  long int shift = n << ( N - 1 );
+  long int shift = 1 << ( N - 1 );
   printf( "%d\n%d\n\n", n, shift );
   takeBit( n, shift );
 
@@ -16,11 +16,11 @@ int main( void ) {
 }
 
 void takeBit( long int a, long int b ) {
-  for (size_t i = 0; i < N; i++) {
-    if ( a & b == 0 ) {
-      printf( "0 " );
-    }else if ( a & b == 1 ) {
-      printf( "1 " );
+  for (size_t i = 0; i < N ; i++) {
+    if ( (a & b) == 0 ) {
+      printf( "0" );
+    } else {
+      printf( "1" );
     }
     a = a << 1;
   }
