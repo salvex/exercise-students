@@ -2,8 +2,26 @@
 un intero il bit meno significativo di posizione i-esima (con 1<i<32).*/
 #include <stdio.h>
 #include <stdlib.h>
+#define N 32
+
+void takeBit( long int a, long int b );
 
 int main( void ) {
-  /* code */
+  long int n = 1;
+  long int shift = n << ( N - 1 );
+  printf( "%d\n%d\n\n", n, shift );
+  takeBit( n, shift );
+
   return 0;
+}
+
+void takeBit( long int a, long int b ) {
+  for (size_t i = 0; i < N; i++) {
+    if ( a & b == 0 ) {
+      printf( "0 " );
+    }else if ( a & b == 1 ) {
+      printf( "1 " );
+    }
+    a = a << 1;
+  }
 }
