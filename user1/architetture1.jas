@@ -1,0 +1,94 @@
+// PROGRAMMA CHE IMPLEMENTA LA POTENZA
+
+
+.constant
+     OBJREF 0
+.end-constant
+
+
+.main
+     .var
+         a
+         b
+         result
+      .end-var
+   BIPUSH 0x3
+   ISTORE a
+   BIPUSH 0x3
+   ISTORE b
+   LDC_W OBJREF
+   ILOAD a
+   ILOAD b
+   INVOKEVIRTUAL pow
+   HALT
+.end-main
+
+
+.method per(x,y)
+ .var
+     r
+ .end-var
+          bipush 0
+          istore r
+          iload x
+          ifeq return
+cycle:    iload y
+          ifeq return
+          iload r
+          iload x
+          iadd
+          istore r
+          iload y
+          bipush 1
+          isub
+          istore y
+          goto cycle
+return:   iload r
+          ireturn
+.end-method
+
+
+
+.method pow(b1,e)
+ .var
+     e2
+     power
+ .end-var
+          bipush 1
+          istore power
+          iload e
+          dup
+          istore e2
+          iload b1
+          ifeq return2
+cycle2:   iload e2
+          ifeq return2
+          LDC_W OBJREF
+          iload b1
+          iload power
+          invokevirtual per
+          istore power
+          iload e2
+          bipush 1
+          isub
+          istore e2
+          goto cycle2
+return2:  iload power
+          ireturn
+.end-method
+
+
+
+
+
+                                                //algoritmo moltiplicativo
+
+                                                //2 x 3 = 6                      if(x == 0) {
+                                                                                //return end
+                                                                           //          } else {
+                                                                           //     for(y; y!=0; y--) {
+                                                                           //          r += x
+                                                                           //     }
+                                                                           //}
+
+                                                //2 x 3 = 2 + 2 + 2
