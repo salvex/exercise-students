@@ -58,13 +58,11 @@ int exsist( int array[], int n, int m ) {
 }
 
 int getPosition( int array[], int n, int m ) {
-  for (int i = 0; i < n; i++) {
-    if ( array[ i ] < m ) {
-      return i - 1;
-    } else {
-      return i;
-    }
+  int i = 0;
+  while ( m > array[i] ) {
+    i++;
   }
+  return i < SIZE ? i : SIZE - 1;
 }
 
 void shift( int array[], int n, int m ) {
