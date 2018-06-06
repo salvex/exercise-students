@@ -1,0 +1,35 @@
+.constant
+    OBJREF 0
+.end-constant
+
+.main
+    .var
+    count
+    num
+    .end-var
+    BIPUSH 7
+    ISTORE count
+    BIPUSH 0
+    BIPUSH 1
+    BIPUSH 1
+    BIPUSH 0
+    BIPUSH 1
+    BIPUSH 1
+    BIPUSH 0
+    BIPUSH 1
+loop:   DUP
+        IADD
+        DUP
+        IADD
+        ISTORE num
+        ILOAD count
+        BIPUSH 1
+        ISUB
+        ISTORE count
+    
+        IFEQ exit
+        GOTO loop
+exit:   ISTORE num
+        BIPUSH num
+        OUT
+        HALT
