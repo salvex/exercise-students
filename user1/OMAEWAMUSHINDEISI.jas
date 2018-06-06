@@ -26,10 +26,7 @@ loop:   DUP
         BIPUSH 1
         ISUB
         ISTORE count
-    
         IFEQ exit
         GOTO loop
 exit:   ISTORE num
-        BIPUSH num
-        OUT
         HALT
