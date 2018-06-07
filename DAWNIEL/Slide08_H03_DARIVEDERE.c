@@ -50,7 +50,7 @@ void sella( int n, int m[][SIZE] ) {
     }
     int x = 0;
     for (size_t k = 0; k < n; k++) {
-      if (m[k][h] < min && m[k][h] != min) {
+      if (m[k][h] < min ) {
         z = k;
         x++;
         if (x == (n - 1)) {
