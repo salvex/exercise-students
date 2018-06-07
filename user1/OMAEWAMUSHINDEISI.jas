@@ -19,9 +19,7 @@
     BIPUSH 1
 loop:   DUP
         IADD
-        DUP
         IADD
-        ISTORE num
         ILOAD count
         BIPUSH 1
         ISUB
