@@ -7,9 +7,14 @@ parametri.*/
 void myStrcat(char *s1, char *s2, char *result);
 
 int main( void ) {
-  char s1[] = "Ciao";
-  char s2[] = "Come stai";
-  char result[20];
+  char s1[20] = {0};
+  char s2[20] = {0};
+  char result[100] = {0};
+
+  puts("Inserisci la prima stringa");
+  scanf("%s", s1);
+  puts("Inserisci la prima stringa");
+  scanf("%s", s2);
   printf("La prima stringa: %s\nLa seconda stringa: %s\n", s1, s2 );
   myStrcat( s1, s2, result);
 
