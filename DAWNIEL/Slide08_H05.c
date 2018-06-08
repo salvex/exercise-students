@@ -79,7 +79,7 @@ void printHeadr( int array[] ) {
     printf( "%4d ", i );
   }
   puts("");
-  for (size_t j = 1; j < 4 * N; j++) {
+  for (size_t j = 1; j < 3 * N; j++) {
     printf( "%2s", "-" );
   }
   printf("\n\n");
