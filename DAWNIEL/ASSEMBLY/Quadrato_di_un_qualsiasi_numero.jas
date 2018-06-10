@@ -1,0 +1,46 @@
+.constant
+OBJREF 0
+.end-constant
+
+.main
+
+.var
+
+a
+b
+result
+
+.end-var
+
+BIPUSH 0x24
+ISTORE a
+BIPUSH 0x24
+ISTORE b
+LDC_W OBJREF
+ILOAD a
+ILOAD b
+INVOKEVIRTUAL pow
+HALT
+.end-main
+
+.method pow( x, y )
+.var
+r
+.end-var
+BIPUSH 0x00
+ISTORE r
+
+loop: ILOAD y
+      IFEQ end
+      ILOAD r
+      ILOAD x
+      IADD
+      ISTORE r
+      ILOAD y
+      BIPUSH 0x01
+      ISUB
+      ISTORE y
+      GOTO loop
+end:  ILOAD r
+      IRETURN
+.end-method

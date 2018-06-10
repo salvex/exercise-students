@@ -1,0 +1,30 @@
+.constant
+OBJREF 0
+.end-constant
+
+.main
+.var
+a
+tot
+b
+.end-var
+
+BIPUSH 2
+ISTORE a
+BIPUSH 1
+ISTORE b
+
+loop: ILOAD a
+      DUP
+      IADD
+      ISTORE tot
+      ILOAD b
+      BIPUSH 1
+      ISUB
+      DUP
+      ISTORE b
+      IFEQ  end
+      GOTO loop
+end:  ILOAD tot
+      HALT
+.end-main
