@@ -33,7 +33,7 @@ int main( void ) {
     printf("Inserisci 1 per inserire le coordinate di un punto, 2 per uscire: " );
     scanf("%d", &z);
 
-    //uso lo whitch per far si che se metto 1 inserisco le coordinate e si incrementa i --- dopo il secondo inserimento i = 2 quindi esce dallo switch automaticamente.
+    //uso lo shitch per far si che se metto 1 inserisco le coordinate e si incrementa i --- dopo il secondo inserimento i = 2 quindi esce dallo switch automaticamente.
     //se metto 2 inizializza i = 2 ed esce dallo switch.
     //e se metto un altro qualsiasi valore mi da errore e mi fa reinserire ( questo all'infinito );.
     switch ( z ) {

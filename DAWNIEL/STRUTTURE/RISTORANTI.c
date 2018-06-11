@@ -158,7 +158,7 @@ void priceSort( Ristoranti a[], int s ) {
   h.price = 0;
   for (int i = 0; i < s - 1 ; i++) {
     for (size_t j = 0; j < s - 1 - i; j++) {
-      if ( a[ j ].price > a[ j + 1 ].price ) {
+      if ( a[ j ].price < a[ j + 1 ].price ) {
         h = a[ j ];
         a[ j ] = a[ j + 1 ];
         a[ j + 1 ] = h;
