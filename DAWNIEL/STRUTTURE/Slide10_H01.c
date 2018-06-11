@@ -109,23 +109,17 @@ void mossaUmano( Player g[], int m ) {
       break;
     }
     if ( pos != -1 ) {
-      mossaComputer( g, m );
+      mossaComputer( g, pos );
       whoIsWinner( g, pos );
     } else {
-      printf("\n\nBasta cosi' campione, hai terminato i round a tua disposizione.\n" );
       break;
     }
   }
 }
 
 void mossaComputer( Player g[], int m ) {
-  for (size_t i = 0; i < m; i++) {
-    if ( g[ 1 ].mosse[ i ] == 0 ) {
-      g[1].mosse[ i ] = rand() % 3;
-      break;
-    }
+    g[1].mosse[ m ] = rand() % 3 + 1;
   }
-}
 
 int whoIsWinner( Player g[], int n ) {
   if ( g[ 0 ].mosse[ n ] == 1 ) {
