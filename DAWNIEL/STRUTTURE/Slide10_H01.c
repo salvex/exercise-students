@@ -117,14 +117,14 @@ void mossaUmano( Player g[], int m ) {
   }
 }
 
-void mossaComputer( Player g[], int m ) {
+int mossaComputer( Player g[], int m ) {
     g[1].mosse[ m ] = rand() % 3 + 1;
   }
 
 int whoIsWinner( Player g[], int n ) {
   if ( g[ 0 ].mosse[ n ] == 1 ) {
     if ( g[ 1 ].mosse[ n ] == 1 ) {
-      printf("\n\n********************\nGAME %d\n%s\t%s\n%s\t%s\n********************\nPAREGGIO\n", n + 1, g[ 0 ].name, g[ 0 ].hand[ 0 ], g[ 1 ].name, g[ 1 ].hand[ 0 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nPAREGGIO\n", n + 1, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 0 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 2 ) {
       printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n + 1, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 1 ] );
