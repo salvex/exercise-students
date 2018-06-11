@@ -23,20 +23,16 @@ int main( void ) {
   int n, m;
   int i = 0, y;
   srand( time( NULL ) );
-
   do {
     printf( "Menu\n**************************\n1)Resetta il game precedente.\n2)Avvia il gioco.\n3)Esci brutalmente.\n**************************\n\n---> " );
     scanf( "%d", &n );
-
-
-
     switch ( n ) {
       case 1:
         printf( "\n\nQuanti round Dovranno affrontare i pretendenti ( max 10 )?\n\n---> " );
         scanf("%d", &m );
         initMosse( g, m );
         if ( m > 0 && m <= 10 ) {
-          i++;
+          i = 1;
           break;
         } else {
           printf("\n\nMI ASCOLTI QUANDO PARLO? M - A - X - 1 - 0, faicle no..?\n\n" );
@@ -134,35 +130,35 @@ void mossaComputer( Player g[], int m ) {
 int whoIsWinner( Player g[], int n ) {
   if ( g[ 0 ].mosse[ n ] == 1 ) {
     if ( g[ 1 ].mosse[ n ] == 1 ) {
-      printf("\n\n********************\nGAME %d\n%s\t%s\n%s\t%s\n********************\nPAREGGIO\n", n, g[ 0 ].name, g[ 0 ].hand[ 0 ], g[ 1 ].name, g[ 1 ].hand[ 0 ] );
+      printf("\n\n********************\nGAME %d\n%s\t%s\n%s\t%s\n********************\nPAREGGIO\n", n + 1, g[ 0 ].name, g[ 0 ].hand[ 0 ], g[ 1 ].name, g[ 1 ].hand[ 0 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 2 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 1 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n + 1, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 1 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 3 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 2 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n + 1, g[ 0 ].hand[ 0 ], g[ 1 ].hand[ 2 ] );
     }
   }
   if ( g[ 0 ].mosse[ n ] == 2 ) {
     if ( g[ 1 ].mosse[ n ] == 2 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nPAREGGIO\n", n, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 1 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nPAREGGIO\n", n + 1, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 1 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 3 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 2 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n + 1, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 2 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 1 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 0 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n + 1, g[ 0 ].hand[ 1 ], g[ 1 ].hand[ 0 ] );
     }
   }
   if ( g[ 0 ].mosse[ n ] == 3 ) {
     if ( g[ 1 ].mosse[ n ] == 3 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nPAREGGIO\n", n, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 2 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nPAREGGIO\n", n + 1, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 2 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 1 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 0 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nHAI PERSO MERDACCIA.\n", n + 1, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 0 ] );
     }
     if ( g[ 1 ].mosse[ n ] == 2 ) {
-      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 1 ] );
+      printf("\n\n********************\nGAME %d\nTU:       \t%s\nAVVERSARIO:\t%s\n********************\nINCREDIBILE! HAI VINTO.\nONORE, GLORIA E PUTTANE PER TE.\n", n + 1, g[ 0 ].hand[ 2 ], g[ 1 ].hand[ 1 ] );
     }
   }
 }
